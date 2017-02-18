@@ -23,7 +23,7 @@ func (app *App) Initialize(user, password, dbname string) {
 		connectionString += " password=" + password
 	}
 	if dbname != "" {
-		connectionString += "dbname=" + dbname
+		connectionString += " dbname=" + dbname
 	}
 
 	var err error
