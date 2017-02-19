@@ -1,12 +1,16 @@
-1. Run PostgreSQL: docker run --name PG nad2000/postgres-uint
-1. Connect to DB and create the table: psql -h 172.17.0.2 -U postgres
-CREATE TABLE products
-(
-    id SERIAL,
-    name TEXT NOT NULL,
-    price NUMERIC(10,2) NOT NULL DEFAULT 0.00,
-    CONSTRAINT products_pkey PRIMARY KEY (id)
-)
+# [![Build Status](https://semaphoreci.com/api/v1/nad2000/gorilla-mux-pg-rest-api/branches/master/badge.svg)](https://semaphoreci.com/nad2000/gorilla-mux-pg-rest-api)
+
+1. Run PostgreSQL: `docker run --name PG nad2000/postgres-uint`
+1. Connect to DB and create the table: `psql -h 172.17.0.2 -U postgres`:
+    ```
+    CREATE TABLE products
+    (
+        id SERIAL,
+        name TEXT NOT NULL,
+        price NUMERIC(10,2) NOT NULL DEFAULT 0.00,
+        CONSTRAINT products_pkey PRIMARY KEY (id)
+    )
+    ```
 1. Fetch dependencies: `go get github.com/gorilla/mux github.com/lib/pq`
 1. Fetch better support for testing: `go get github.com/smartystreets/goconvey` ([http://goconvey.co])
 
