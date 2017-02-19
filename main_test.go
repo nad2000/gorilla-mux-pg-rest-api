@@ -23,11 +23,8 @@ func TestMain(m *testing.M) {
 		os.Getenv("TEST_DB_NAME"))
 
 	ensureTableExists()
-
 	code := m.Run()
-
 	clearTable()
-
 	os.Exit(code)
 }
 
