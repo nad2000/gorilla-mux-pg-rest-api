@@ -17,7 +17,7 @@ This example is loosly based on https://semaphoreci.com/community/tutorials/buil
     )
     ```
 1. Fetch dependencies: `go get github.com/gorilla/mux github.com/lib/pq`
-1. Fetch better support for testing: `go get github.com/smartystreets/goconvey` ([http://goconvey.co])
+1. Fetch better support for testing: `go get github.com/smartystreets/goconvey` (http://goconvey.co)
 
 
 ## Run Tests
