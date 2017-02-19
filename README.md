@@ -8,6 +8,8 @@ CREATE TABLE products
     CONSTRAINT products_pkey PRIMARY KEY (id)
 )
 1. Fetch dependencies: `go get github.com/gorilla/mux github.com/lib/pq`
+1. Fetch better support for testing: `go get github.com/smartystreets/goconvey` ([http://goconvey.co])
+
 
 ## Run Tests
 
@@ -15,4 +17,11 @@ CREATE TABLE products
 1. `export PGSSLMODE=disable` (in order to disable SSL since docker PG wasn't built with SSL support)
 1. `export TEST_DB_USERNAME=postgres` or **PGDATABASE**
 1. `export TEST_DB_NAME=postgres` or **PGUSER**
+```
+export PGHOST=172.17.0.2
+export PGSSLMODE=disable
+export PGDATABASE=test
+export PGUSER=postgres
+```
+Run either manually: `go test -v` or monitor the project directory with **goconvey**: `goconvey`
 

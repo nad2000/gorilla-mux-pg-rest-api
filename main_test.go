@@ -70,6 +70,7 @@ func addProducts(count int) {
 			"INSERT INTO products(name, price) VALUES ($1, $2)",
 			"Product #"+strconv.Itoa(i), (i+1.0)*10)
 	}
+	app.DB.Exec("COMMIT")
 }
 
 // TESTS:
@@ -187,4 +188,16 @@ func TestDeleteProduct(t *testing.T) {
 	req, _ = http.NewRequest("GET", "/product/1", nil)
 	response = executeRequest(req)
 	checkResponseCode(t, http.StatusNotFound, response.Code)
+}
+
+func TestProductDb(t *testing.T) {
+	clearTable()
+	addProducts(10)
+	products, err := main.GetProducts(app.DB, 0, 100)
+	if err != nil {
+		t.Errorf("Something went wrong: %s", err)
+	}
+	if len(products) != 10 {
+		t.Errorf("Expected 10 products, got: %s (%d)", products, len(products))
+	}
 }
