@@ -1,6 +1,6 @@
 # Building and Testing a REST API in Go with Gorilla Mux and PostgreSQL [![Build Status](https://semaphoreci.com/api/v1/nad2000/gorilla-mux-pg-rest-api/branches/master/badge.svg)](https://semaphoreci.com/nad2000/gorilla-mux-pg-rest-api)
 
-This primer is loosly based on https://semaphoreci.com/community/tutorials/building-and-testing-a-rest-api-in-go-with-gorilla-mux-and-postgresql
+This example is loosly based on https://semaphoreci.com/community/tutorials/building-and-testing-a-rest-api-in-go-with-gorilla-mux-and-postgresql
 
 **TODO**: try to implement without Gorilla MUX or replace with something lighter.
 
